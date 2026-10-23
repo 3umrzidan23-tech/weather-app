@@ -1,155 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="sunny">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather</title>
-    <link rel="stylesheet" href="./css/all.min.css" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media.css" />
+    <meta name="theme-color" content="#1e202b" />
+    <meta
+      name="description"
+      content="Live weather conditions, a 24-hour outlook, air quality, and a multi-day forecast for any city. Clean, fast, and built for everyday decisions."
+    />
+    <meta name="author" content="Weather." />
+    <meta property="og:title" content="Weather — Live Forecast & Multi-Day Outlook" />
+    <meta
+      property="og:description"
+      content="Real-time conditions, hourly detail, and a multi-day forecast for any city."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Weather — Live Forecast & Multi-Day Outlook" />
+    <meta
+      name="twitter:description"
+      content="Real-time conditions, hourly detail, and a multi-day forecast for any city."
+    />
+    <title>Weather — Live Forecast & Multi-Day Outlook</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg background py-5">
-      <div class="container-fluid px-5 background">
-        <div>
-          <img src="./images/logo.png" class="ps-5" alt="" />
-          <a class="navbar-brand text-light fs-4 fw-bold" href="#">Weather</a>
-        </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-6 gap-3 pe-3">
-            <li class="nav-item">
-              <a
-                class="nav-link active text-light position-relative px-4"
-                aria-current="page"
-                href="#"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light position-relative px-4" href="#"
-                >News</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light position-relative px-4" href="#"
-                >Live cameras</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light position-relative px-4" href="#"
-                >Photos</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light position-relative px-4" href="#"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <section id="section">
-      <!-- input  -->
-      <div class="container">
-        <div class="input-group background pt-5 pb-3">
-          <input
-            class="form-control p-3 rounded-5"
-            list="datalistOptions"
-            id="exampleDataList"
-            placeholder="Find Your Location..."
-          />
-          <button
-            class="btn btn-info rounded-5"
-            type="button"
-            id="button-addon2"
-          >
-            Find
-          </button>
-        </div>
-        <datalist id="datalistOptions">
-          <option value="San Francisco"></option>
-          <option value="New York"></option>
-          <option value="Seattle"></option>
-          <option value="Los Angeles"></option>
-          <option value="Chicago"></option>
-        </datalist>
-        <!--  cards  -->
-        <div class="row pt-5 py-3  weather-row">
-          <!--  cards 1 -->
-
-       
-        </div>
-      </div>
-    </section>
-
-    <section id="section-2" class="py-5">
-      <form class="container py-4">
-        <div class="row align-items-center">
-          <!-- الفورم ياخد 8 أعمدة -->
-          <div class="col-md-8 col-12 background d-flex gap-2">
-            <input
-              type="email"
-              class="form-control text-start rounded-5 p-3 custom-input"
-              id="name"
-              placeholder="Enter Your Email To Subscribe"
-            />
-            <button
-              class="btn btn-info rounded-5 px-4"
-              type="button"
-              id="subscribeBtn"
-            >
-              Subscribe
-            </button>
-          </div>
-
-          <!-- الايكونات تاخد 4 أعمدة -->
-          <div class="col-md-4 col-12 d-flex gap-3 justify-content-center icon">
-            <a
-              href="#"
-              class="d-flex align-items-center justify-content-center fs-5"
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a
-              href="#"
-              class="d-flex align-items-center justify-content-center fs-5"
-            >
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a
-              href="#"
-              class="d-flex align-items-center justify-content-center fs-5"
-            >
-              <i class="fa-brands fa-google"></i>
-            </a>
-            <a
-              href="#"
-              class="d-flex align-items-center justify-content-center fs-5"
-            >
-              <i class="fa-brands fa-pinterest"></i>
-            </a>
-          </div>
-        </div>
-      </form>
-    </section>
-
-    <!--   javascript    -->
-    <script src="./javascript/bootstrap.bundle.min.js"></script>
-    <script src="./javascript/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
