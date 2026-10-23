@@ -1,28 +1,14 @@
-const API_BASE =
-  import.meta.env.VITE_WEATHER_API_BASE || "https://api.weatherapi.com/v1";
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-
-function requireKey() {
-  if (!API_KEY) {
-    const error = new Error(
-      "Weather API key is missing. Add VITE_WEATHER_API_KEY to .env.local and restart the dev server."
-    );
-    error.code = "MISSING_API_KEY";
-    throw error;
-  }
-  return API_KEY;
-}
+const API_ENDPOINT = "/api/weather";
 
 async function request(path, params, signal) {
-  const url = new URL(`${API_BASE}/${path}`);
-  url.search = new URLSearchParams({
-    key: requireKey(),
-    ...params,
-  }).toString();
+  const search = new URLSearchParams({ path, ...params });
 
   let response;
   try {
-    response = await fetch(url, { signal });
+    response = await fetch(`${API_ENDPOINT}?${search}`, {
+      signal,
+      headers: { Accept: "application/json" },
+    });
   } catch (error) {
     if (error.name === "AbortError") throw error;
     const networkError = new Error(
@@ -66,12 +52,14 @@ export function searchCities(query, { signal } = {}) {
 export function friendlyError(error) {
   if (!error) return "";
   if (error.name === "AbortError") return "";
-  if (error.code === "MISSING_API_KEY") return error.message;
   if (error.status === 400) {
     return "We couldn't find that location. Check the spelling or try a nearby city.";
   }
   if (error.status === 401 || error.status === 403) {
-    return "The weather service rejected the API key. Check your WeatherAPI configuration.";
+    return "The weather service rejected the request. Check the server API key configuration.";
+  }
+  if (error.status === 404) {
+    return "The weather proxy is not available. Check that the API route is deployed.";
   }
   if (error.status === 429) {
     return "Too many requests right now. Please wait a moment and try again.";
