@@ -2,6 +2,9 @@
 
 A focused weather dashboard built with React and Vite. It keeps the original dark visual identity (`#1e202b`, `#2b2e3d`, `#009ad8`) while adding live conditions, hourly detail, a daily forecast, a temperature trend chart, saved cities, and a responsive layout.
 
+- Live demo: https://weather-app-seven-iota-58.vercel.app
+- Repository: https://github.com/3umrzidan23-tech/weather-app
+
 ## Features
 
 - Live current conditions, feels-like temperature, humidity, wind, pressure, visibility, UV, and air quality
