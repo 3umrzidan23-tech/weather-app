@@ -1,0 +1,78 @@
+#section {
+  background-color: #1e202b;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/banner.png);
+  background-size: 100% 50%; /* الصورة تاخد 40% من ارتفاع السكشن */
+  background-repeat: no-repeat;
+  background-position: top;
+  min-height: 100vh;
+}
+
+:root {
+  --background: #1e202b;
+}
+.background .form-control {
+  background-color: var(--background) !important;
+  color: #fff;
+  border: none;
+}
+
+.background .form-control::placeholder {
+  color: #ccc;
+}
+
+.card {
+  background-color: #2b2e3d;
+  color: #ccc;
+}
+i {
+  color: #cccccc77;
+}
+.om {
+  color: white;
+}
+
+nav {
+  background-color: var(--background);
+  padding-inline: 20px !important;
+}
+nav ul li a {
+  display: inline-block; /* يخلي المقاس ثابت */
+  border: 2px solid transparent !important;
+  color: #009ad8 !important;
+  border-radius: 10px;
+  padding: 1px 5px !important; /* ثبّت padding ثابت لكل الروابط */
+  transition: 0.7s !important;
+}
+nav ul a:hover {
+  border: 2px solid #009ad8 !important;
+  color: #009ad8 !important;
+}
+.icon i {
+  background-color: var(--background) !important;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* حجم الايكون */
+  color: #009ad8 !important;
+  transition: 0.5s;
+}
+.icon i:hover{
+  background-color: #009ad8 !important;
+  color: #ccc !important;
+}
+
+.icon a {
+  text-decoration: none !important;
+}
+
+#section-2 {
+  background-color: #2b2e3d !important;
+}
+
+#cla {
+  background-color: var(--background) !important;
+}
